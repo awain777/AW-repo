@@ -1,1 +1,10 @@
 
+awain@DESKTOP-34BNHNI UCRT64 /c/Users/Public/CCLAUTO-Interview/python (main)
+$ python api_test.py 192.168.1.0 24
+There are 254 assignable hosts for the 192.168.1.0 subnet
+The first address is 192.168.1.1
+The subnet mask in decimal form is 255.255.255.0
+The subnet mask in cidr notation is /24
+
+awain@DESKTOP-34BNHNI UCRT64 /c/Users/Public/CCLAUTO-Interview/python (main)
+$ 
