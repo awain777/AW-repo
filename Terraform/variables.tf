@@ -2,7 +2,7 @@ variable "base" {
     description = "Base of URL"
 }
 
-variable "subnet2" {
+variable "subnet" {
     description = "Subnet"
 }
 
