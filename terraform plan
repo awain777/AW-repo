@@ -1,25 +1,28 @@
 PS C:\Users\Public\CCLAUTO-Interview\terraform> terraform plan -var-file="input.tfvars"
 data.http.api_url: Reading...
-data.http.api_url: Read complete after 0s [id=https://networkcalc.com/api/ip/172.16.0.0/32]
+data.http.api_url: Read complete after 0s [id=https://networkcalc.com/api/ip/172.16.0.0/16]
 
 Changes to Outputs:
   + results = jsonencode(
         {
           + address = {
-              + assignable_hosts      = 0
-              + broadcast_address     = "172.16.0.0"
-              + cidr_notation         = "172.16.0.0/32"
-              + first_assignable_host = null
-              + last_assignable_host  = null
+              + assignable_hosts      = 65534
+              + broadcast_address     = "172.16.255.255"
+              + cidr_notation         = "172.16.0.0/16"
+              + first_assignable_host = "172.16.0.1"
+              + last_assignable_host  = "172.16.255.254"
               + network_address       = "172.16.0.0"
-              + subnet_bits           = 32
-              + subnet_mask           = "255.255.255.255"
-              + wildcard_mask         = "0.0.0.0"
+              + subnet_bits           = 16
+              + subnet_mask           = "255.255.0.0"
+              + wildcard_mask         = "0.0.255.255"
             }
           + meta    = {
-              + next_address = "https://networkcalc.com/api/ip/null"
-              + permalink    = "https://networkcalc.com/subnet-calculator/172.16.0.0/32"
+              + next_address = "https://networkcalc.com/api/ip/172.16.0.1/16"
+              + permalink    = "https://networkcalc.com/subnet-calculator/172.16.0.0/16"
             }
           + status  = "OK"
         }
     )
+
+You can apply this plan to save these new output values to the Terraform state, without changing any real
+infrastructure.
