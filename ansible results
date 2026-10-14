@@ -1,0 +1,33 @@
+awain@DESKTOP-34BNHNI:/mnt/c/Users/Public/CCLAUTO-Interview/Ansible$ ansible-playbook playbook.yml -e "subnet=192.168.1.0 mask=24"
+[WARNING]: No inventory was parsed, only implicit localhost is available
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'
+
+PLAY [Network Calculator] **********************************************************************************************
+
+TASK [api_call : API Call] *********************************************************************************************
+ok: [localhost]
+
+TASK [api_call : Assignable Hosts] *************************************************************************************
+ok: [localhost]
+
+TASK [api_call : First Address] ****************************************************************************************
+ok: [localhost]
+
+TASK [api_call : Subnet Mask - Decimal] ********************************************************************************
+ok: [localhost]
+
+TASK [api_call : Subnet Mask - CIDR Notation] **************************************************************************
+ok: [localhost]
+
+TASK [api_call : Print Results] ****************************************************************************************
+ok: [localhost] => {
+    "msg": [
+        "There are 254 assignable hosts for the 192.168.1.0/24 subnet",
+        "The first address is 192.168.1.1",
+        "The subnet mask in decimal form is 255.255.255.0",
+        "The subnet mask in cidr notation is /24"
+    ]
+}
+
+PLAY RECAP *************************************************************************************************************
+localhost                  : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
