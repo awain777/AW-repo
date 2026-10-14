@@ -7,20 +7,20 @@
   register: result
 - name: Assignable Hosts
   set_fact:
-    hosts: " "
+      assignable_hosts_count: "{{ result.json.address.assignable_hosts }}"
 - name: First Address
   set_fact:
-    first_ip: " "
+    first_ip: "{{ result.json.address.first_assignable_host }}"
 - name: Subnet Mask - Decimal
   set_fact:
-    mask_decimal: " "
+   mask_decimal: "{{ result.json.address.subnet_mask }}"
 - name: Subnet Mask - CIDR Notation
   set_fact:
-    mask_cidr: "/"
+    mask_cidr: "/{{ result.json.address.subnet_bits }}"
 - name: Print Results
   debug:
     msg: 
-      - "There are {{ hosts }} assignable hosts for the {{ subnet }}/{{ mask }} subnet"
+      - "There are {{  assignable_hosts_count }} assignable hosts for the {{ subnet }}/{{ mask }} subnet"
       - "The first address is {{ first_ip }}"
       - "The subnet mask in decimal form is {{ mask_decimal }}"
       - "The subnet mask in cidr notation is {{ mask_cidr }}"
