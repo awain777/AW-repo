@@ -2,6 +2,6 @@ provider "http" {
 }
 
 data "http" "api_url" {
-  url = "${var.subnet}${var.mask}/${var.base}"
-  method = " "
+  url = "${var.base}${var.subnet}/${var.mask}"
+  method = "GET"
 }
